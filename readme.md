@@ -1,0 +1,1 @@
+Curso iniciante de JavaScript, conteúdo básico em 6 módulos que vão desde o conhecimento da linguagem até o uso de funções.
