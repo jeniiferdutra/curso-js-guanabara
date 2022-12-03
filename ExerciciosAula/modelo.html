@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercício</title>
+    <style>
+        body {
+            background: rgb(67, 67, 189);
+            font: normal 15pt Arial;
+        }
+        header {
+            text-align: center;
+            color: white;
+        }
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: rgba(37, 35, 35, 0.852) 5px 5px 10px;
+        }
+        footer {
+            text-align: center;
+            color: white;
+            font-style: italic;
+        }
+
+        #img {
+            border-radius: 50%;
+            width: 250px;
+            height: 250px;
+        }
+
+        div {
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <header>
+        <h1>Hora do Dia</h1>
+    </header>
+    <section>
+        <div id="msg">
+            Aqui vai aparecer a mensagem..
+        </div>
+        <div id="foto">
+            <img id="img" src="/ExerciciosAula/img/manha.jpg" alt="Foto do dia">
+        </div>
+    </section>
+    <footer>
+        <p>&copyCursoemVideo</p>
+    </footer>
+
+    <script>
+        function carregar() {
+        let msg = document.querySelector('#msg')
+        let img = document.querySelector('#img')
+        let data = new Date()
+        let hora = data.getHours()
+        msg.innerHTML = `Agora são ${hora} horas`
+        if(hora >= 0 && hora < 12) {
+            img.src = '/ExerciciosAula/img/manha.jpg'
+            document.body.style.background = '#C5A960'
+        } else if(hora >= 12 && hora <= 18) {
+            img.src = '/ExerciciosAula/img/tarde.jpg'
+            document.body.style.background = '#8A5C3E'
+        } else {
+            img.src = '/ExerciciosAula/img/noite.jpg'
+            document.body.style.background = '#193845'
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de exercício</title>
+    <style>
+        body {
+            background: rgb(128, 128, 193);
+            font: normal 15pt Arial;
+        }
+        header {
+            text-align: center;
+            color: white;
+        }
+        section {
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            width: 500px;
+            margin: auto;
+            box-shadow: rgba(37, 35, 35, 0.852) 5px 5px 10px;
+        }
+        footer {
+            text-align: center;
+            color: white;
+            font-style: italic;
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div>
+            <p>Ano de nascimento:
+                <input type="number" name="txtano" id="txtano">
+            </p>
+            <p>Sexo:
+                <input type="radio" name="radsex" id="masc" checked>
+                <label for="masc">Masculino</label>
+                <input type="radio" name="radsex" id="fem">
+                <label for="fem">Feminino</label>
+            </p>
+            <p>
+                <input type="button" value="Verificar" onclick="verificar()">
+            </p>       
+        </div>
+        <div id="res">
+            Preencha os dados acima para ver o resultado!
+        </div>
+    </section>
+    <footer>
+        <p>&copyCursoemVideo</p>
+    </footer>
+
+    <script>
+        
+        function verificar() {
+            let data = new Date()
+            let ano = data.getFullYear()
+            let fAno = document.querySelector('#txtano')
+            let res = document.querySelector('#res')
+            if(fAno.value.length == 0 || Number(fAno.value) > ano) {
+                alert('[ERRO] Verifique os dados e tente novamente.')
+            } else {
+                let fsex = document.querySelectorAll('radsex')
+                let idade = ano - Number(fAno.value)
+                let radius = document.querySelectorAll("input[type='radio']")
+                let gen = ''
+                let img = document.createElement('img')
+                img.setAttribute('id', 'foto')
+                if (radius[0].checked){
+                    gen = 'Masculino'
+                    if(idade >= 0 && idade < 10) {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-bebe-m.png')
+                    } else if(idade < 25) {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-jovem-m.png')
+                    } else if(idade < 50) {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-adulto-m.png')
+                    } else {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-idoso-m.png')
+                    }
+                } else {
+                    gen = 'Feminino'
+                    if(idade >= 0 && idade < 10) {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-bebe-f.png')
+                    } else if(idade < 25) {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-jovem-f.png')
+                    } else if(idade < 50) {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-adulto-f.png')
+                    } else {
+                        img.setAttribute('src', '/ExerciciosAula/img/foto-idoso-f.png')
+                    }
+                }
+                res.style.textAlign = 'center'
+                res.innerHTML = `Detectamos ${gen} com ${idade} anos.`
+                res.appendChild(img)
+            }
+        }        
+        
+
+    </script>
+</body>
+</html>
