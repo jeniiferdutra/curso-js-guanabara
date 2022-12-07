@@ -1,0 +1,25 @@
+body {
+    background-color: #3E83D8;
+}
+
+header {
+    font: normal 12pt Arial;
+    color: white;
+    text-align: center;
+}
+
+section {
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    border-radius: 5%;
+}
+
+select {
+    width: 200px;
+    height: 200px;
+}
+
+div {
+    padding: 5px;
+}
