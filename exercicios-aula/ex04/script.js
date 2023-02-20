@@ -1,17 +1,18 @@
-function calcular(){
-    var num = document.querySelector('#num')
-    var resp = document.querySelector('#res')
+function tabuada() {
+    let num = document.querySelector('#num')
+    let res = document.querySelector('#res')
     if(num.value.length == 0) {
-        alert('Por favor, digite um número!')
+        alert('Por favor, digite um número.')
     } else {
-        var tab = Number(num.value)
-        var cont = 1
-        resp.innerHTML = ''
-        while(cont <= 10){
-            var item = document.createElement('option')
-            item.text = `${tab} x ${cont} = ${tab*cont}`
-            resp.appendChild(item)
-            cont ++
+        let n = Number(num.value) 
+        let c = 1
+        res.innerHTML = ''
+        while(c <= 10) {
+            let item = document.createElement('option')
+            item.text = `${n} x ${c} = ${n * c}`
+            item.value = `res${c}`
+            res.appendChild(item)
+            c++
         }
     }
 }
