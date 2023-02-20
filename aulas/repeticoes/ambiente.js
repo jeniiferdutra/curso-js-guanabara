@@ -1,24 +1,12 @@
+
 var c = 1
 
-do {
-    console.log(`Passo ${c}`)
-    c++
-} while(c <= 2 )
-
-
-/*
-while(c <= 6){
-    console.log('Tudo bem?')
+while(c <= 6) {
+    console.log('tudo bem?')
     c++
 }
-*/ 
 
-
-/* 
-console.log('Tudo bem?')
-console.log('Tudo bem?')
-console.log('Tudo bem?') 
-console.log('Tudo bem?')
-console.log('Tudo bem?')
-console.log('Tudo bem?')
-*/
+do{
+    console.log(`passo ${c}`)
+    c++
+} while(c <= 6)
