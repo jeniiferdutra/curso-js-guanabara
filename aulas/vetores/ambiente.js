@@ -1,15 +1,16 @@
+// Um array/vetor é uma variavel que tem varios elementos, cada elemento é composto pelo seu valor e por uma chave de identificação
+
 let num = [5, 8, 2, 9, 3]
-num.push(7)
+num[5] = 6 // acrescentar um valor
+num.push(7) // coloca na última posuição
+num.length // saber o comprimento da array
+num.sort() // coloca os elementos em forma crescente
 
-console.log(num)
-console.log(`O segundo valor do vetor é ${num[2]}`)
+let pos= num.indexOf(8)
 
-/*
-for(let pos = 0; pos < num.length; pos++){
-    console.log(`A posição ${pos} tem o valor ${num[pos]}`)
+if(pos == -1) {
+    console.log('Valor não foi encontrado')
+} else {
+    console.log(`O valor está na posição ${pos}`)
 }
-*/
 
-for(let pos in num){
-    console.log(num[pos])
-}
