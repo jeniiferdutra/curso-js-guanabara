@@ -12,14 +12,11 @@ section {
     background-color: white;
     width: 500px;
     margin: auto;
-    border-radius: 5%;
+    padding: 7px;
+    border-radius: 15px;
 }
 
 select {
-    width: 200px;
-    height: 200px;
+    width: 150px;
 }
 
-div {
-    padding: 5px;
-}
